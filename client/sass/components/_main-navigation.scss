@@ -1,0 +1,23 @@
+.main-navi {
+  position: fixed;
+  @include flex($justify: flex-end, $align: center);
+  width: 100vw;
+  padding: 2em 1em;
+  background: greenyellow;
+
+  &__brand {
+    flex: 1;
+  }
+
+  &__links {
+    flex: 1;
+    @include flex($justify: flex-end, $align: flex-start);
+  }
+
+  &__link {
+
+    &:not(:last-child) {
+      padding-right: 2em;
+    }
+  }
+}
