@@ -4,11 +4,11 @@
   "description": "A boilerplate website dev env",
   "main": "index.js",
   "scripts": {
-    "prestart": "babel-node buildScripts/srcServer.js",
-    "start": "npm-run-all --parallel security-check open:src lint:watch test:watch",
-    "open:src": "node buildScripts/srcServer.js",
+    "prestart": "babel-node ./server.js ./server/*",
+    "start": "npm-run-all --parallel security-check open:src lint:watch",
+    "open:src": "node ./server.js",
     "security-check": "node_modules/.bin/nsp check",
-    "lint": "node_modules/.bin/esw webpack.config.*, src, buildScripts --color",
+    "lint": "node_modules/.bin/esw webpack.config.*, client, server --color",
     "lint:watch": "npm run lint -- --watch",
     "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
     "test:watch": "npm run test -- --watch"
@@ -19,12 +19,26 @@
   "keywords": [
     "dev-env",
     "starterkit",
-    "starterproject",
-    "boilerplate"
+    "swap-n-go",
+    "react",
+    "redux",
+    "node"
   ],
   "author": "vinnyA3",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.15.3",
+    "babel-preset-stage-1": "^6.22.0",
+    "express": "^4.15.2",
+    "lodash": "^4.17.4",
+    "pug": "^2.0.0-beta11",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.3",
+    "react-router": "^2.5.2",
+    "redux": "^3.6.0",
+    "redux-form": "^6.5.0",
+    "redux-thunk": "^2.2.0",
     "whatwg-fetch": "1.0.0"
   },
   "devDependencies": {
@@ -33,6 +47,7 @@
     "babel-core": "6.17.0",
     "babel-loader": "6.2.5",
     "babel-preset-latest": "6.16.0",
+    "babel-preset-react": "^6.23.0",
     "babel-register": "6.16.3",
     "chai": "3.5.0",
     "cheerio": "0.22.0",
@@ -42,7 +57,6 @@
     "eslint": "3.8.1",
     "eslint-plugin-import": "2.0.1",
     "eslint-watch": "2.1.14",
-    "express": "4.14.0",
     "extract-text-webpack-plugin": "1.0.1",
     "file-loader": "^0.10.1",
     "html-webpack-plugin": "2.22.0",
