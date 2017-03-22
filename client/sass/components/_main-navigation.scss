@@ -1,9 +1,10 @@
 .main-navi {
   position: fixed;
   @include flex($justify: flex-end, $align: center);
-  width: 100vw;
-  padding: 2em 1em;
-  background: greenyellow;
+  width: 100%;
+  padding: 1em 1em;
+  color: #fff;
+  background: transparent;
 
   &__brand {
     flex: 1;
