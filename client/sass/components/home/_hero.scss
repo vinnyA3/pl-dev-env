@@ -1,0 +1,49 @@
+.hero {
+  @include flex($justify: flex-start, $align: center);
+  height: 100vh;
+  width: 98.5vw;
+  overflow: hidden;
+  // @include bg-cover($url: 'https://i.imgur.com/7Qy0NFM.jpg');
+  background: radial-gradient(ellipse at center, hsla(255, 82%, 44%, 1) 30%, hsla(254, 71%, 38%, 1) 90%);
+
+  &__content {
+    text-align: left;
+    color: #fff;
+    width: 50%;
+    padding: 0em 2em;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 3.3rem;
+  }
+
+  // Book Effect
+  &__books {
+    position: relative;
+    @include flex($justify: center, $align: center);
+    width: 50%;
+  }
+
+  &__book {
+    height: 60%;
+    width: 55%;
+    z-index: 2;
+    box-shadow: 0 1.8em 4em -1em hsla(0, 0%, 0%, .6);
+
+    &:nth-of-type(2), &:nth-of-type(3) {
+      position: absolute;
+      height: 80%;
+      width: 50%;
+      z-index: 1;
+    }
+
+    &:nth-of-type(2) {
+      left: 2em;
+    }
+
+    &:nth-of-type(3) {
+      right: 2em;
+    }
+  }
+}
