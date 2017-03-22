@@ -7,7 +7,17 @@ html, body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: $base-heading-font-family;
+  letter-spacing: .1rem;
   margin: 0;
+}
+
+p {
+  line-height: 2.1rem;
+}
+
+p, span, a {
+  font-family: $base-font-family;
 }
 
 a {
