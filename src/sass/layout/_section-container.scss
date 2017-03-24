@@ -1,0 +1,10 @@
+.section-container {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+
+// test
+  &:nth-child(2n) {
+    background: #fff;
+  }
+}
