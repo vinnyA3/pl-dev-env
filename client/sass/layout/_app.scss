@@ -1,5 +1,0 @@
-// ID = App
-#app {
-  @extend %full-scale;
-  @include flex($wrap: wrap);
-}

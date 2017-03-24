@@ -1,6 +1,0 @@
-@mixin bg-cover ($url, $fallback: red) {
-  background: $fallback;
-  background: url($url);
-  background-position: center;
-  background-size: cover;
-}
